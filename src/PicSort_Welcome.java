@@ -25,7 +25,7 @@ public class PicSort_Welcome extends JFrame {
         cp.add(c);
         plus(c.getHeight() + pd);
     }
-    public void plus(int add) { currentY += add; System.out.println(currentY);}
+    public void plus(int add) { currentY += add;}
     public void addHeaderPanel(String text, Color bg, Color fg, int fontSize) {
         JLabel l = new JLabel(text, SwingConstants.CENTER);
         l.setForeground(fg);
@@ -48,7 +48,8 @@ public class PicSort_Welcome extends JFrame {
         //start dat Frame
     }
     public void openAbout() {
-
+        dispose();
+        new PicSort_About("About");
     }
     public void createWindow() {
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
