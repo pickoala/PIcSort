@@ -21,11 +21,6 @@ public class PicSort_Welcome extends JFrame {
         addButton("About", ae -> openAbout());
         createWindow();
     }
-    public void a(Component c, int pd) {
-        cp.add(c);
-        plus(c.getHeight() + pd);
-    }
-    public void plus(int add) { currentY += add;}
     public void addHeaderPanel(String text, Color bg, Color fg, int fontSize) {
         JLabel l = new JLabel(text, SwingConstants.CENTER);
         l.setForeground(fg);
@@ -43,14 +38,29 @@ public class PicSort_Welcome extends JFrame {
         b.addActionListener(ae);
         a(b, pd);
     }
+    public void addClickPanel(String text, Color bg, Color fg) {
+        JLabel l = new JLabel(text, SwingConstants.CENTER);
+        l.setForeground(fg);
+        l.setFont(new Font("Header", Font.PLAIN, 12));
+        JPanel panel = new JPanel(new GridLayout());
+        panel.setBounds(0, currentY, finalW, 30);
+        panel.setBackground(bg);
+        panel.add(l);
+        a(panel, 0);
+    }
     public void startPicSort() {
         dispose();
-        //start dat Frame
+        new PicSort("PicSort ALPHA");
     }
     public void openAbout() {
         dispose();
         new PicSort_About("About");
     }
+    public void a(Component c, int pd) {
+        cp.add(c);
+        plus(c.getHeight() + pd);
+    }
+    public void plus(int add) { currentY += add;}
     public void createWindow() {
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setSize(finalW, currentY + 34);

@@ -17,11 +17,6 @@ public class PicSort_About extends JFrame {
         addColorPanel("18th January 2016", new Color(0x263238), Color.WHITE);
         createWindow();
     }
-    public void a(Component c, int pd) {
-        cp.add(c);
-        plus(c.getHeight() + pd);
-    }
-    public void plus(int add) { currentY += add;}
     public void addHeaderPanel(String text, Color bg, Color fg, int fontSize) {
         JLabel l = new JLabel(text, SwingConstants.CENTER);
         l.setForeground(fg);
@@ -42,6 +37,11 @@ public class PicSort_About extends JFrame {
         panel.add(l);
         a(panel, 0);
     }
+    public void a(Component c, int pd) {
+        cp.add(c);
+        plus(c.getHeight() + pd);
+    }
+    public void plus(int add) { currentY += add;}
     public void createWindow() {
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setSize(finalW, currentY + 22);
