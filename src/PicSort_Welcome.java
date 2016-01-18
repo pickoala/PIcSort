@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 /**
- * Version 0.01.1.A
+ * Version 0.01.2.A
  * created on 18th January 2016
  * by Konstantin A. M. (pickoala) Walter
  *
