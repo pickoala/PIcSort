@@ -11,8 +11,10 @@ public class PicSort_About extends JFrame {
     Container cp = getContentPane();
     public PicSort_About(String title) {
         super(title);
-        addHeaderPanel("About", new Color(0x01579B), Color.WHITE, 30);
-        addColorPanel("Made by Konstantin Walter", new Color(0x0277BD), Color.WHITE);
+        addHeaderPanel("About", new Color(0x1A237E), Color.WHITE, 30);
+        addColorPanel("Made by Konstantin Walter", new Color(0x0D47A1), Color.WHITE);
+        addColorPanel("Version 0.01.2.A", new Color(0x263238), Color.WHITE);
+        addColorPanel("18th January 2016", new Color(0x263238), Color.WHITE);
         createWindow();
     }
     public void a(Component c, int pd) {
@@ -42,7 +44,7 @@ public class PicSort_About extends JFrame {
     }
     public void createWindow() {
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        setSize(finalW, currentY + 34);
+        setSize(finalW, currentY + 22);
         Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation( (d.width - getWidth()) / 2, (d.height - getHeight()) / 2);
         setResizable(false);
@@ -56,5 +58,4 @@ public class PicSort_About extends JFrame {
         });
         setVisible(true);
     }
-    //public static void main(String[] args) { new PicSort_About("About");}
 }
