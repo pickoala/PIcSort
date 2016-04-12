@@ -10,12 +10,17 @@ public class PicSort_About extends JFrame {
     int pd = 16;
     int finalW = 240;
     int currentY = 0;
+
+    /** Colors */
     Color hd = new Color(0xBF360C);
     Color bg = new Color(0x263238);
     Color fg = new Color(0x455A64);
     Color cClick = new Color(0x69F0AE);
+
     Container cp = getContentPane();
+
     public PicSort_About(String title) {
+
         super(title);
         addHeaderPanel("About", hd, Color.WHITE, 30);
         addPadding(pd);
@@ -38,6 +43,7 @@ public class PicSort_About extends JFrame {
         headerPanel.add(l);
         a(headerPanel, 0);
     }
+
     public void addColorPanel(String text, Color back, Color fore) {
         JLabel l = new JLabel(text, SwingConstants.CENTER);
         l.setForeground(fore);
@@ -48,6 +54,7 @@ public class PicSort_About extends JFrame {
         panel.add(l);
         a(panel, 0);
     }
+
     public void addClickPanel(String text, Color back, Color fore, int height, int method) {
         JLabel l = new JLabel(text, SwingConstants.CENTER);
         l.setForeground(fore);
@@ -72,12 +79,14 @@ public class PicSort_About extends JFrame {
         });
         a(panel, 0);
     }
+
     public void addPadding(int height) {
         JPanel padding = new JPanel();
         padding.setBounds(0, currentY, finalW, height);
         padding.setBackground(bg);
         a(padding, 0);
     }
+
     public void openWebsite(String url) {
         switch (System.getProperty("os.name").toLowerCase()) {
             case "mac os x":
@@ -85,7 +94,7 @@ public class PicSort_About extends JFrame {
                 try {
                     rt.exec( "open " + url);
                 } catch(IOException e) {
-                    System.out.println("Runtime::" + e);
+                    System.out.println("Runtime: " + e);
                 }
                 break;
             default:
@@ -94,12 +103,16 @@ public class PicSort_About extends JFrame {
         }
         System.out.println(System.getProperty("os.name").toLowerCase());
     }
+
     public void a(Component c, int padding) {
         cp.add(c);
         plus(c.getHeight() + padding);
     }
+
     public void plus(int add) { currentY += add;}
+
     public void createWindow() {
+
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setSize(finalW, currentY + 22);
         Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
@@ -107,6 +120,7 @@ public class PicSort_About extends JFrame {
         setResizable(false);
         cp.setLayout(null);
         addWindowListener(new WindowAdapter() {
+
             @Override
             public void windowClosing(WindowEvent e) {
                 super.windowClosing(e);

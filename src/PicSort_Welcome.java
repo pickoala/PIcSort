@@ -25,6 +25,8 @@ public class PicSort_Welcome extends JFrame {
         addPadding(pd);
         addClickPanel("Start PicSort", cClick, Color.BLACK, 40, 0);
         addPadding(pd);
+        addClickPanel("Settings", cClick, Color.BLACK, 30, 2);
+        addPadding(pd);
         addClickPanel("About", cClick, Color.BLACK, 30, 1);
         addPadding(pd);
         createWindow();
@@ -57,6 +59,9 @@ public class PicSort_Welcome extends JFrame {
                     case 1:
                         openAbout();
                         break;
+                    case 2:
+                        openSettings();
+                        break;
                     default:
                         break;
                 }
@@ -77,6 +82,10 @@ public class PicSort_Welcome extends JFrame {
     public void openAbout() {
         dispose();
         new PicSort_About("About");
+    }
+    public void openSettings() {
+        dispose();
+        new PicSort_Settings();
     }
     public void a(Component c, int pd) {
         cp.add(c);
